@@ -14,6 +14,10 @@ app.get('/api/products', (req: Request, res: Response) => {
     res.json(SampleProducts)
 })
 
+app.get('/api/products/:slug', (req: Request, res: Response) => {
+    res.json(SampleProducts.find((x) => x.slug === req.params.slug))
+})
+
 const PORT = 4000
 app.listen(PORT, () => {
     console.log(`Served started at http://localhost:${PORT}`)
