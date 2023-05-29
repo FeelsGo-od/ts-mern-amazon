@@ -1,5 +1,5 @@
 import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
-import { SampleProducts } from './data'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
@@ -18,16 +18,7 @@ function App() {
       </header>
       <main>
         <Container className='mt-3'>
-          <Row>
-            {SampleProducts.map((product) => (
-                <Col key={product.slug} sm={6} md={4} lg={3}>
-                  <img src={product.image} alt={product.name} className='product-image' />
-                  <h2>{product.name}</h2>
-                  <p>${product.price}</p>
-                </Col>
-            ))
-            }
-          </Row>
+          <Outlet />
         </Container>
       </main>
       <footer>
